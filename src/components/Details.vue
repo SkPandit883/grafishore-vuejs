@@ -48,11 +48,11 @@ const changeTab = (tab) => {
 </script>
 
 <template>
-    <div class="h-[450px] bg-black w-full flex p-6">
-        <div class="  space-y-3 w-1/3">
+    <div class="h-[450px] bg-black w-full  grid xl:grid-cols-3 lg:grid-cols-3 md:grid-cols-3  grid-cols-2  p-6">
+        <div class="space-y-3">
             <template v-for="(tab, key) in tabs">
                 <button @click="changeTab(tab)"
-                    :class="['side-button', tab.active ? 'bg-red-950 animate-bounce duration-500 ease-linear delay-500' : 'bg-red-700', 'px-5', 'py-3', 'text-xl', 'text-white', 'font-bold']">
+                    :class="['side-button', tab.active ? 'bg-red-950 animate-bounce duration-500 ease-linear delay-500' : 'bg-red-700', 'xl:px-5 lg:px-5 md:px-3 px-2', 'xl:py-3 lg:py-3 md:py-3 py-1', 'text-xl', 'text-white', 'font-bold']">
                     <img width="64" height="64" :src="tab.icon"
                         alt="external-fuel-mutuline-traffic-others-zufarizal-robiyanto" />
                 </button><br>
@@ -61,11 +61,11 @@ const changeTab = (tab) => {
 
 
         </div>
-        <div class="h-full w-1/3 ">
+        <div class="h-full">
             <Fuel v-if="activeTab == 'fuel'" :car="getCarStore.carDetails" />
             <CommingSoon v-else />
         </div>
-        <div class="w-1/2 ">
+        <div class="xl:block lg:block md:block hidden">
             <img src="https://wallpaper.dog/large/20576939.jpg" alt="">
             <h3 class="mt-8 text-red-600 text-3xl font-bold">{{ getCarStore.carDetails?.name }}</h3>
         </div>

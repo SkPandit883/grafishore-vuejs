@@ -11,25 +11,21 @@ const instance = axios.create({
             "X-Requested-With": "XMLHttpRequest",
             "Access-Control-Allow-Origin": "*",
         },
-        "Accept": "application/json"
+        "Accept": "application/json",
+        "X-API-KEY": import.meta.env.VITE_API_KEY
+
     }
 });
 
-// instance.interceptors.response.use(
-//     response => response,
-//     error => {
-//         if (error.response.status === 401 && window.location.pathname !== "/login") {
-
-//             window.localStorage.setItem('actual_redirect', window.location.href)
-//             window.location.replace('/login');
-//         } else if (error.response.status === 406) {
-
-//             alert('You are not authorized for this platform. You will be now logged out.');
-//             auth.globalLogout();
-//         }
-//         console.log(error);
-//         return Promise.reject(error);
-//     }
-// );
+instance.interceptors.response.use(
+    response => response,
+    error => {
+        if (error.response.status === 403 && error.response.data.error =="invalid API key") {
+            console.log("Response", error.response.data.error)
+            alert("Invalid API key ,check your env.")
+        }
+        return Promise.reject(error);
+    }
+);
 
 export default instance

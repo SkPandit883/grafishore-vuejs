@@ -6,7 +6,7 @@ const props=defineProps(['car'])
     <div>
         <div class="text-red-600 flex space-x-8">
             <div>
-                <h2 class="text-xl">RANGE</h2>
+                <h2 class="lx:text-xl lg:text-lg md:text-xl text-md">RANGE</h2>
                 <div>
                     <div class="flex">
                         <div>
@@ -22,7 +22,7 @@ const props=defineProps(['car'])
                 </div>
             </div>
             <div>
-                    <h2 class="text-xl">REFILL</h2>
+                    <h2 class="lx:text-xl lg:text-lg md:text-xl text-md">REFILL</h2>
                     <div>
                         <div class="flex">
                             <div>
@@ -41,17 +41,17 @@ const props=defineProps(['car'])
         </div>
 
         <div class="text-red-600 mt-6 space-y-6">
-            <div class="fuel-div px-10  py-2 flex justify-between shadow-xl shadow-green-500 w-1/2 bg-gray-900">
-                <h2 class="text-xl font-bold" >TOUR</h2>
-                <h2 class="text-xl font-bold">{{ car?.fuel?.tour }}</h2>
+            <div class="fuel-div xl:px-10 lg:px-10 md:px-8 px-6  py-2 flex justify-between shadow-xl shadow-green-500 w-1/2 bg-gray-900">
+                <h2 class="lx:text-xl lg:text-lg md:text-xl text-md font-bold" >TOUR</h2>
+                <h2 class="lx:text-xl lg:text-lg md:text-xl text-md font-bold">{{ car?.fuel?.tour }}</h2>
             </div>
-            <div class="  fuel-div px-16 py-2 flex justify-between shadow-xl shadow-green-500 w-3/4 bg-gray-900">
-                <h1 class="text-xl font-bold">ECO+</h1>
-                <h1 class="text-xl font-bold">{{ car?.fuel?.eco }}</h1>
+            <div class="  fuel-div xl:px-16 lg:px-16 md:px-12 px-10 py-2 flex justify-between shadow-xl shadow-green-500 w-3/4 bg-gray-900">
+                <h1 class="lx:text-xl lg:text-lg md:text-xl text-md font-bold">ECO+</h1>
+                <h1 class="lx:text-xl lg:text-lg md:text-xl text-md font-bold">{{ car?.fuel?.eco }}</h1>
             </div>
-            <div class="fuel-div px-8 py-2 flex justify-between shadow-xl shadow-green-500 w-1/2 bg-gray-900">
-                <h1 class="text-xl font-bold">SPORTS+</h1>
-                <h1 class="text-xl font-bold">{{ car?.fuel?.sport }}</h1>
+            <div class=" fuel-div xl:px-8 lg:px-8 md:px-6 px-3   py-2 flex justify-between shadow-xl shadow-green-500 xl:w-1/2 lg:w-1/2 md:w-1/2 w-3/5 bg-gray-900">
+                <h1 class="lx:text-xl lg:text-lg md:text-xl text-sm font-bold">SPORTS+</h1>
+                <h1 class="lx:text-xl lg:text-lg md:text-xl text-sm font-bold">{{ car?.fuel?.sport }}</h1>
             </div>
         </div>
 
